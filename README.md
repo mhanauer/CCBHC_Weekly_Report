@@ -2,7 +2,7 @@
 setwd("P:/Evaluation/CCBHC IN/Data")
 ccbhc_adult = read.csv("8.2 Adult data.csv", header = TRUE, na.strings = c(-1:-11))
 
-head(ccbhc_adult)
+head(ccbhc_adult, 10)
 adult_base = subset(ccbhc_adult, ccbhc_adult$InterviewType_07 == 1)
 
 library(descr)
@@ -70,11 +70,9 @@ multi_race = apply(all_race_youth_complete, 1, sum)
 multi_race = ifelse(multi_race > 1, 1, 0)
 describe.factor(multi_race)
 
-
-
 White_Data_youth=na.omit(youth_base$RaceWhite)
 describe.factor(White_Data_youth)
-
+#TEST!!!!!!!!!!!!!!!!!!!1
 Black_Data_youth=na.omit(youth_base$RaceBlack)
 describe.factor(Black_Data_youth)
 
