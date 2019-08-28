@@ -52,15 +52,22 @@ describe.factor(AlaskaNative_Data_complete)
 
 ###Count for Gender
 ###1 = male, 2 = female, 3 = transgender, 4= other (specify)
-describe.factor(adult_base$Gender)
+describe.factor(na.omit(adult_base$Gender))
+
+
+
+###Count for age group
+describe.factor(na.omit(adult_base$Agegroup))
 
 ###Count for Sexual Identity
 ###1 = heterosexual, 2 = gay/lesbian, 3 = bisexual, 4= other (specify)
-describe.factor(adult_base$SexualIdentity)
+describe.factor(na.omit(adult_base$SexualIdentity))
+
 
 ###Count for rating of overall health
 ###1 = Excellent, 2 = Very Good, 3 = Good, 4 = Fair, 5 = Poor
-describe.factor(adult_base$OverallHealth)
+describe.factor(na.omit(adult_base$OverallHealth))
+
 
 ###Number of total adult people
 dim(adult_base)[1]
@@ -111,13 +118,16 @@ describe.factor(AlaskaNative_Data_youth)
 
 ###Count for Gender
 ###1 = male, 2 = female, 3 = transgender, 4= other (specify)
-describe.factor(youth_base$Gender)
+describe.factor(na.omit(youth_base$Gender))
+
+###Count for age group
+describe.factor(na.omit(youth_base$Agegroup))
 
 ###Count for rating of overall health
 ###1 = Excellent, 2 = Very Good, 3 = Good, 4 = Fair, 5 = Poor
-describe.factor(youth_base$OverallHealth)
+describe.factor(na.omit(youth_base$OverallHealth))
 
-#### Grant Summary Reports
+############## Grant Summary Reports ############## ############## 
 ## Current enrollments
 dim(adult_base)[1]+dim(youth_base)[1]
 ## Enrollments this quarter
@@ -128,9 +138,3 @@ adult_base_quarter = subset(adult_base, InterviewDate >= "2018-04-01" & Intervie
 youth_base_quarter = subset(youth_base, InterviewDate >= "2018-04-01" & InterviewDate < "2019-07-01")
 ## Number this quarter
 dim(adult_base_quarter)[1]+dim(youth_base_quarter)[1]
-
-
-
-
-
-
